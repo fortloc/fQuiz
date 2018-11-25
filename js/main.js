@@ -252,7 +252,6 @@ function displaySplashScreen()
 {
     var html = '';
     html += '<center><img src="https://fortloc.com/quiz/images/splash.jpg" alt="image1" width="300" height="462" onclick="displayRacers('+ 0 + ')">';
-    html += '<p><button align="center" class="startButton" onclick="displayRacers('+ 0 + ')">Start</button></p></center>';
     document.getElementsByClassName('main')[0].innerHTML = html;
 }
 function displayRacers(racerNum)
