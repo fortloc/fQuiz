@@ -1,0 +1,53 @@
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+}
+
+.description, .about {
+    font-family: 'Yellowtail', cursive;
+}
+
+.question {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.main-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px 0px 0px 0px;
+}
+
+.stopwatch {
+    position: absolute;
+    top: 250px;
+    left: 815px;
+    width: 50px;
+    font-weight: bold;
+    color: #fff;
+    font-size: 150%;
+  }
+
+.tableLinks {
+    font-family: 'Yellowtail', cursive;
+  }
+  
+.startButton, .play {
+    width : 5em;
+    height : 3em;
+}
+
+.Unlocked {
+    font-family: 'Yellowtail', cursive;
+    font-size: 150%;
+    background: rgba(255,230,0,0.5);
+    padding: 3px 5px;
+    margin: -3px -5px;
+    line-height: 1.7;
+    border-radius: 3px; 
+}

@@ -1,0 +1,4 @@
+[04-Aug-2018 19:11:25 UTC] PHP Warning:  require_once(SQL.php): failed to open stream: No such file or directory in /home1/fortlocc/public_html/app-experiences/SqlBuilder.php on line 4
+[04-Aug-2018 19:11:25 UTC] PHP Fatal error:  require_once(): Failed opening required 'SQL.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home1/fortlocc/public_html/app-experiences/SqlBuilder.php on line 4
+[04-Aug-2018 23:44:12 UTC] PHP Warning:  require_once(sql.php): failed to open stream: No such file or directory in /home1/fortlocc/public_html/app-experiences/npquery.php on line 3
+[04-Aug-2018 23:44:12 UTC] PHP Fatal error:  require_once(): Failed opening required 'sql.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home1/fortlocc/public_html/app-experiences/npquery.php on line 3
