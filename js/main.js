@@ -251,7 +251,7 @@ function avatarSelect(doc, num)
 function displaySplashScreen()
 {
     var html = '';
-    html += '<center><img src="https://fortloc.com/quiz/images/splash.jpg" alt="image1" width="300" height="462" onclick="displayRacers('+ 0 + ')">';
+    html += '<center><img class="splash" src="https://fortloc.com/quiz/images/splash.jpg" alt="image1" width="300" height="462" onclick="displayRacers('+ 0 + ')">';
     document.getElementsByClassName('main')[0].innerHTML = html;
 }
 function displayRacers(racerNum)
@@ -506,14 +506,26 @@ function displayResult()
 {
     var html = '';
     racersResult.sort(compare);
+    if (player.Score > 8 && !borrisUnlocked)
+    {
+        html += '<center><table><tr><td>&nbsp;&nbsp;</td><td><p class="Unlocked"><b> Borris Nikon is now unlocked</b></p></td><td>&nbsp;</td></tr></table></center>';
+        borrisUnlocked = true;
+    }
     html += '<center><table width="400" border="0">\
     <tbody>\
       <tr>';
     for(i=racersResult.length-1; i >=0; i--)
     {
-      html += '<td><p><img src="'+ racersResult[i].ImageSrc + '" alt="image1" height="462" width="300"></p>\
-      <p><b> Name: ' + racersResult[i].Name + '</b></p>\
-      <p><b> Score: '+ racersResult[i].Score + '</b></p></td>';
+      html += '<td><p><img src="'+ racersResult[i].ImageSrc + '" alt="image1" height="462" width="300"></p>';
+      if (racersResult[i].Name != player.Name)
+      {
+        html += '<p><b> Name: ' + racersResult[i].Name + '</b></p>\
+            <p><b> Score: '+ racersResult[i].Score + '</b></p></td>';
+      }
+      else{
+        html += '<p class="player"><b> Name: ' + racersResult[i].Name + '</b></p>\
+            <p class="player"><b> Score: '+ racersResult[i].Score + '</b></p></td>';
+      }
     }
     html += '</tr></tbody>';
     
@@ -522,12 +534,8 @@ function displayResult()
         answered[i] = false;
     }
     html += '<button class="play" onclick="displayQuiz(' + 0 + ','+false+','+false+'.'+false+')">Play Again</button></center>';
-    html += '&nbsp;&nbsp;&nbsp;<button class="play" onclick="displaySplashScreen()">Choose Avatar</button></table></center>';
-    if (player.Score > 8 && !borrisUnlocked)
-    {
-        html += '<center><p class="Unlocked"><b> Borris Nikon is now unlocked</b></p></center>';
-        borrisUnlocked = true;
-    }
+    html += '&nbsp;&nbsp;&nbsp;<button class="play" onclick="displayRacers('+0+')">Choose Avatar</button></table></center>';
+    
     questions = null;
     document.getElementsByClassName('main')[0].innerHTML = html;
     importResults(player.Name, player.Score, opponent1.Score, opponent2.Score);

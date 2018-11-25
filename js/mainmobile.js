@@ -486,14 +486,27 @@ function displayResult()
     var html = '';
     racersResult.sort(compare);
     importResults(player.Name, player.Score, opponent1.Score, opponent2.Score);
+    if (player.Score > 8 && !borrisUnlocked)
+    {
+        html += '<center><table><tr><td>&nbsp;&nbsp;</td><td><p class="Unlocked"><b> Borris Nikon is now unlocked</b></p></td><td>&nbsp;</td></tr></table></center>';
+        borrisUnlocked = true;
+    } 
     for(i=0; i <racersResult.length; i++)
     {
         html += '<div class="result-image">';
         html += '<img src="'+ racersResult[i].ImageSrc + '" alt="image1" width="100">\
-                </div>\
-       <p> Name: '+ racersResult[i].Name + '</p>\
-       <p> Score: '+ racersResult[i].Score + '</p>\
-       <p> &nbsp</p>';
+                </div>';
+        if (racersResult[i].Name != player.Name)
+        {
+            html += '<p> Name: '+ racersResult[i].Name + '</p>\
+            <p> Score: '+ racersResult[i].Score + '</p>\
+            <p> &nbsp</p>';
+        }
+        else{
+            html += '<p class="player"> Name: '+ racersResult[i].Name + '</p>\
+            <p class="player"> Score: '+ racersResult[i].Score + '</p>\
+            <p> &nbsp</p>';
+        }       
        racersResult[i].Score = 0;
     }
 
@@ -505,11 +518,7 @@ function displayResult()
     html += '&nbsp;&nbsp;&nbsp;<button class="play" onclick="displaySplashScreen()">Choose Avatar</button></table></center>';
     questions = null;
     document.getElementsByClassName('main')[0].innerHTML = html;
-    if (player.Score > 8 && !borrisUnlocked)
-    {
-        html += '<center><p class="Unlocked"><b> Borris Nikon is now unlocked</b></p></center>';
-        borrisUnlocked = true;
-    }    
+       
     player.Score = 0;
     opponent1.Score = 0;
     opponent2.Score = 0;

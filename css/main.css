@@ -48,3 +48,8 @@ background-color: lightgray;
     line-height: 1.7;
     border-radius: 3px; 
 }
+
+.player {
+    background: rgba(3, 145, 3, 0.965);
+    font-size: 120%;
+}
