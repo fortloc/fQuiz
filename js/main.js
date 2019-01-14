@@ -248,8 +248,40 @@ function avatarSelect(doc, num)
     displayQuiz(0, false);
 }
 
+function displayTopBanner()
+{
+    var imgNum = Math.floor((Math.random() * 5) + 1);
+    var imgName = "https://fortloc.com/quiz/images/720motosports.jpg";
+    var linkedIn = "https://fortloc.com/quiz/images/vacations";
+    switch(imgNum)
+    {
+        case 1:
+            imgName = "https://fortloc.com/quiz/images/720motosports.jpg";
+            linkedIn = "https://fortloc.com/motorsports";
+        break;
+        case 2:
+            imgName = "https://fortloc.com/quiz/images/destinationbanners.jpg";
+        break;
+        case 3:
+            imgName = "https://fortloc.com/quiz/images/destinationbanners2.jpg";
+        break;
+        case 4:
+            imgName = "https://fortloc.com/quiz/images/experiencesbanner3.jpg";
+            linkedIn = "https://fortloc.com/experiences/";
+        break;
+        case 5:
+            imgName = "https://fortloc.com/quiz/images/experiencestopnotch.jpg";
+            linkedIn = "https://fortloc.com/experiences/";
+        break;
+    }
+    image = document.getElementById('topimage');
+    link = document.getElementById('topLink');
+    image.src = imgName;
+    link.href = linkedIn;
+}
 function displaySplashScreen()
 {
+    displayTopBanner();
     var html = '';
     html += '<center><img class="splash" src="https://fortloc.com/quiz/images/splash.jpg" alt="image1" width="300" height="462" onclick="displayRacers('+ 0 + ')">';
     document.getElementsByClassName('main')[0].innerHTML = html;

@@ -60,3 +60,7 @@
 .splash {
     cursor: pointer;
 }
+
+.banner {
+    border:1px solid rgba(167, 167, 164, 0.5);
+}
